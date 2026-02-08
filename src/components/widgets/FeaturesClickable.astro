@@ -1,0 +1,73 @@
+---
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import Headline from '~/components/ui/Headline.astro';
+import { Icon } from 'astro-icon/components';
+
+const {
+  title = await Astro.slots.render('title'),
+  subtitle = await Astro.slots.render('subtitle'),
+  tagline = await Astro.slots.render('tagline'),
+  items = [],
+  id,
+  isDark = false,
+  classes = {},
+  bg = await Astro.slots.render('bg'),
+  defaultIcon,
+} = Astro.props;
+
+// Determine responsive column class based on number of items
+const gridColsClass = items.length === 4
+  ? 'grid-cols-1 sm:grid-cols-2'
+  : 'grid-cols-1 sm:grid-cols-2 md:grid-cols-3';
+---
+
+<WidgetWrapper
+  id={id}
+  isDark={isDark}
+  containerClass={`max-w-7xl mx-auto ${classes?.container ?? ''}`}
+  bg={bg}
+>
+  <Headline
+    title={title}
+    subtitle={subtitle}
+    tagline={tagline}
+    classes={classes?.headline as Record<string, string>}
+  />
+
+  <div class={`grid gap-4 md:gap-6 ${gridColsClass}`}>
+    {items.map((item) => {
+      const Wrapper = item.href ? 'a' : 'div';
+      const hrefProps = item.href
+        ? {
+            href: item.href,
+            target: item.href.startsWith('http') ? '_blank' : undefined,
+            rel: item.href.startsWith('http') ? 'noopener noreferrer' : undefined,
+          }
+        : {};
+
+      return (
+        <Wrapper
+          class={`relative rounded-lg shadow-[0_4px_30px_rgba(0,0,0,0.1)] dark:shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur border border-[#ffffff29] bg-white dark:bg-slate-900 p-6 hover:shadow-xl cursor-pointer transition-block`}
+          {...hrefProps}
+        >
+          {/* Existing icon at top */}
+          {(item.icon || defaultIcon) && (
+            <div class={`w-12 h-12 mb-6 text-primary`}>
+              <Icon name={item.icon ?? defaultIcon} class="w-full h-full" />
+            </div>
+          )}
+
+          <h3 class="text-lg font-semibold mb-2 text-gray-900 dark:text-white">{item.title}</h3>
+          <p class="text-gray-700 dark:text-gray-300" set:html={item.description} />
+
+          {/* Secondary icon - positioned bottom right */}
+          {item.secondaryIcon && (
+            <div class="absolute bottom-4 right-4 w-6 h-6 text-primary">
+              <Icon name={item.secondaryIcon} class="w-full h-full" />
+            </div>
+          )}
+        </Wrapper>
+      );
+    })}
+  </div>
+</WidgetWrapper>

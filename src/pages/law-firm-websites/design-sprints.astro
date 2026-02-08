@@ -1,0 +1,79 @@
+---
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Content from '~/components/widgets/Content.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Button from '~/components/ui/Button.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Design Sprints for Law Firm Websites',
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero
+    tagline="Design & UX"
+    title="Design sprints that ship high-converting pages fast"
+    subtitle="We translate strategy into conversion-driven UI in two-week sprints so your partners see progress without waiting months."
+    actions={[{ variant: 'primary', target: '_blank', text: 'Review sample deliverables', href: '/contact' }]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=1600&q=80',
+      alt: 'Design team collaborating at a whiteboard',
+    }}
+  />
+
+  <Content
+    isReversed
+    tagline="What happens in a sprint"
+    title="Focused collaborations, zero fluff"
+    items={[
+      {
+        title: 'Component library',
+        description:
+          'Buttons, cards, testimonial stacks, and intake CTAs built once and reused everywhere for speed + consistency.',
+      },
+      {
+        title: 'Practice page layouts',
+        description:
+          'Each layout maps to search intent (awareness, consideration, decision) with modular proof and FAQ sections.',
+      },
+      {
+        title: 'Interactive reviews',
+        description:
+          'Figma prototypes + Loom walkthroughs replace marathon meetings. Feedback is resolved inside 48 hours.',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=1200&q=80',
+      alt: 'Designer adjusting mockups on laptop',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Design that keeps intake top of mind
+      </h3>
+      <p>
+        Every visual decision is tied to conversion data: CTA placement vs. heatmaps, typography tuned for readability, and proof blocks positioned near decision moments.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 mt-6">
+        <div class="flex w-full sm:w-auto">
+          <Button href='/law-firm-websites/conversion-assets' class="w-full sm:mb-0" variant="primary">
+            Next: Conversion assets
+          </Button>
+        </div>
+      </div>
+    </Fragment>
+  </Content>
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Book a sprint slot',
+        href: '/contact',
+      },
+    ]}
+    title="Need designs that actually close clients?"
+    subtitle="Send us your current site or inspiration links and well outline a sprint timeline."
+  />
+</Layout>

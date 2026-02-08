@@ -1,0 +1,185 @@
+---
+import Button from '~/components/ui/Button.astro';
+
+const {
+  title = await Astro.slots.render('title'),
+  tagline,
+  specs = await Astro.slots.render('specs'),
+  actions = await Astro.slots.render('actions'),
+  images = await Astro.slots.render('images'),
+  id,
+  bg = await Astro.slots.render('bg'),
+} = Astro.props;
+---
+
+<section class="pt-10 relative md:-mt-[76px] not-prose" {...id ? { id } : {}}>
+  <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+    <slot name="bg">
+      {bg ? <Fragment set:html={bg} /> : null}
+    </slot>
+  </div>
+
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="pt-0 md:pt-[76px] pointer-events-none"></div>
+    <div class="py-12 md:py-20 lg:py-0 lg:flex lg:items-center lg:h-screen lg:gap-12">
+      
+      <!-- Left side -->
+      <div class="basis-1/2 text-center lg:text-left pb-10 md:pb-16 mx-auto max-w-lg">
+        {tagline && (
+          <p class="text-base text-primary dark:text-blue-200 font-bold tracking-wide uppercase mb-2" set:html={tagline} />
+        )}
+        {title && (
+          <h1 class="text-5xl md:text-6xl font-bold leading-tight tracking-tight mb-6 font-heading dark:text-gray-200" set:html={title} />
+        )}
+
+        {specs && (
+          <div class="overflow-x-auto mb-8">
+            <table class="w-full border border-gray-200 dark:border-gray-700 rounded-md text-left text-l text-muted md:text-base border-collapse [&>tbody>tr>td]:border [&>tbody>tr>td]:border-gray-200 dark:[&>tbody>tr>td]:border-gray-700">
+              <tbody set:html={specs} />
+            </table>
+          </div>
+        )}
+
+        {actions && (
+          <div class="flex flex-wrap gap-4 justify-center lg:justify-start">
+            {Array.isArray(actions) ? (
+              actions.map((action) => (
+                <Button {...(action || {})} class="py-2.5 px-6 font-semibold text-sm shadow-none w-full sm:w-auto" />
+              ))
+            ) : (
+              <Fragment set:html={actions} />
+            )}
+          </div>
+        )}
+      </div>
+
+      <!-- Right side: image slider -->
+      <div class="basis-1/2 max-w-xl mx-auto relative select-none">
+        <div class="relative overflow-hidden rounded-md shadow-lg">
+          <div
+            class="flex transition-transform duration-500 ease-in-out"
+            style="transform: translateX(0%)"
+            id="slider-track"
+          >
+            <slot name="images">
+              {images
+                ? images.map((img, index) => (
+                    <img
+                      src={img.src}
+                      alt={img.alt || `Image ${index + 1}`}
+                      class="w-full flex-shrink-0 object-cover max-h-[450px]"
+                      loading={index === 0 ? 'eager' : 'lazy'}
+                    />
+                  ))
+                : null}
+            </slot>
+          </div>
+        </div>
+
+        <!-- Slider controls -->
+        <div class="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex gap-2">
+          <button
+            class="w-3 h-3 rounded-full bg-gray-300 dark:bg-gray-600"
+            aria-label="Previous slide"
+            id="prev-btn"
+            type="button"
+          ></button>
+          <button
+            class="w-3 h-3 rounded-full bg-gray-300 dark:bg-gray-600"
+            aria-label="Next slide"
+            id="next-btn"
+            type="button"
+          ></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script is:inline>
+    (() => {
+      const track = document.getElementById('slider-track');
+      const prevBtn = document.getElementById('prev-btn');
+      const nextBtn = document.getElementById('next-btn');
+
+      if (!track || !prevBtn || !nextBtn) return;
+
+      const slides = track.children;
+      const total = slides.length;
+      let index = 0;
+
+      function updateSlide() {
+        track.style.transition = 'transform 0.5s ease-in-out';
+        track.style.transform = `translateX(-${index * 100}%)`;
+      }
+
+      prevBtn.addEventListener('click', () => {
+        index = index === 0 ? total - 1 : index - 1;
+        updateSlide();
+      });
+
+      nextBtn.addEventListener('click', () => {
+        index = index === total - 1 ? 0 : index + 1;
+        updateSlide();
+      });
+
+      // Swipe/Drag support
+      let startX = 0;
+      let currentX = 0;
+      let isDragging = false;
+      let isMouseDown = false;
+
+      const onDragStart = (x) => {
+        startX = x;
+        isDragging = true;
+        track.style.transition = 'none';
+      };
+
+      const onDragMove = (x) => {
+        if (!isDragging) return;
+        currentX = x;
+        const deltaX = currentX - startX;
+        track.style.transform = `translateX(calc(${-index * 100}% + ${deltaX}px))`;
+      };
+
+      const onDragEnd = (x) => {
+        if (!isDragging) return;
+        isDragging = false;
+        const deltaX = x - startX;
+        track.style.transition = 'transform 0.5s ease-in-out';
+
+        if (deltaX > 50) {
+          index = index === 0 ? total - 1 : index - 1;
+        } else if (deltaX < -50) {
+          index = index === total - 1 ? 0 : index + 1;
+        }
+        updateSlide();
+      };
+
+      // Touch events
+      track.addEventListener('touchstart', (e) => onDragStart(e.touches[0].clientX));
+      track.addEventListener('touchmove', (e) => onDragMove(e.touches[0].clientX));
+      track.addEventListener('touchend', (e) => onDragEnd(e.changedTouches[0].clientX));
+
+      // Mouse events
+      track.addEventListener('mousedown', (e) => {
+        isMouseDown = true;
+        onDragStart(e.clientX);
+      });
+
+      document.addEventListener('mousemove', (e) => {
+        if (isMouseDown) onDragMove(e.clientX);
+      });
+
+      document.addEventListener('mouseup', (e) => {
+        if (isMouseDown) {
+          isMouseDown = false;
+          onDragEnd(e.clientX);
+        }
+      });
+
+      Array.from(slides).forEach((img) => {
+        img.addEventListener('dragstart', (e) => e.preventDefault());
+      });
+    })();
+  </script>
+</section>

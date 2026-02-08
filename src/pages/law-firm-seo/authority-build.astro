@@ -1,0 +1,66 @@
+---
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Content from '~/components/widgets/Content.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Authority Build | Law Firm SEO Module',
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero
+    tagline="Module 01"
+    title="Authority build: make Google trust your firm"
+    subtitle="We engineer the technical, entity, and reputation signals that convince Google youre the safest answer for legal queries."
+    actions={[{ variant: 'primary', text: 'Book diagnostic', href: '/contact' }]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1400&q=80',
+      alt: 'Search console dashboard on laptop',
+    }}
+  />
+
+  <Content
+    isReversed
+    items={[
+      {
+        title: 'Technical cleanup',
+        description:
+          'Crawl budget, site architecture, schema, Core Web Vitals, and multilingual setups fixed before scaling traffic.',
+        icon: 'tabler:tool',
+      },
+      {
+        title: 'Entity development',
+        description:
+          'Knowledge panel, citations, and digital PR packages that align your brand with key legal concepts and locations.',
+        icon: 'tabler:id',
+      },
+      {
+        title: 'Review velocity',
+        description:
+          'Google Business Profile, Avvo, and specialization-specific reviews operationalized with compliant follow-up flows.',
+        icon: 'tabler:stars',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=1200&q=80',
+      alt: 'Attorney collecting testimonials',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Build the reputation layer once, reap rankings for years
+      </h3>
+      <p>
+        We combine structured data, media mentions, and review ops so Google sees you as the definitive resource in your niche.
+      </p>
+    </Fragment>
+  </Content>
+
+  <CallToAction
+    actions={[{ variant: 'primary', text: 'Talk authority build', href: '/contact' }]}
+    title="Ready to become the obvious choice?"
+    subtitle="Send us your current Search Console exports and GBP linkwell reply with quick wins."
+  />
+</Layout>

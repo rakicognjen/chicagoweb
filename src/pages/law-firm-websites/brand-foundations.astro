@@ -1,0 +1,79 @@
+---
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Content from '~/components/widgets/Content.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Button from '~/components/ui/Button.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Brand Foundations for Law Firm Websites',
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero
+    tagline="Offer Architecture"
+    title="Brand foundations that make your firm memorable"
+    subtitle="Before we design a single page, we lock in your positioning, proof hierarchy, and narrative so prospects immediately get who you help and why they should care."
+    actions={[{ variant: 'primary', target: '_blank', text: 'Start the diagnostic', href: '/contact' }]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1507206130118-b5907f817163?auto=format&fit=crop&w=1500&q=80',
+      alt: 'Strategy workshop with sticky notes',
+    }}
+  />
+
+  <Content
+    isReversed
+    tagline="Deliverables"
+    title="Everything you need to sound like the go-to attorney"
+    items={[
+      {
+        title: 'Client + case matrix',
+        description:
+          'We map personas, matter values, and urgency levels so messaging focuses on profitable opportunities.',
+      },
+      {
+        title: 'Messaging hierarchy',
+        description:
+          'Headline formulas, objection handlers, and CTA copy blocks for every practice page and intake touchpoint.',
+      },
+      {
+        title: 'Proof + media kit',
+        description:
+          'Pull quotes, verdict stats, press, and awards organized for rapid deployment across the site.',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80',
+      alt: 'Notebook with positioning statements',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        We translate your instincts into a clear, repeatable story
+      </h3>
+      <p>
+        Partners rarely agree on messaging. Our workshops pull out what matters, validate it with SERP and intake data, then package it for writers, designers, and future campaigns.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 mt-6">
+        <div class="flex w-full sm:w-auto">
+          <Button href='/law-firm-websites' class="w-full sm:mb-0" variant="primary">
+            Back to website blueprint
+          </Button>
+        </div>
+      </div>
+    </Fragment>
+  </Content>
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Schedule workshop',
+        href: '/contact',
+      },
+    ]}
+    title="Need sharper positioning?"
+    subtitle="Send us your current deck or site link. Well respond with quick wins and a workshop agenda."
+  />
+</Layout>

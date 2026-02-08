@@ -1,0 +1,76 @@
+---
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Content from '~/components/widgets/Content.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Button from '~/components/ui/Button.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Website Care Plans for Law Firms',
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero
+    tagline="Care & Compliance"
+    title="Keep your site fast, secure, and compliant"
+    subtitle="We babysit your site so you can focus on caseshandling updates, Core Web Vitals, accessibility, and content governance every month."
+    actions={[{ variant: 'primary', target: '_blank', text: 'See support tiers', href: '/contact' }]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1600&q=80',
+      alt: 'Developer monitoring dashboards',
+    }}
+  />
+
+  <Content
+    isReversed
+    tagline="Whats monitored"
+    title="Peace of mind for partners and ops teams"
+    items={[
+      {
+        title: 'Performance + uptime',
+        description: '24/7 monitoring, speed optimizations, and hosting management to keep conversions high.',
+      },
+      {
+        title: 'Security + updates',
+        description: 'Plugin/theme updates, backups, malware scans, and vulnerability patching handled weekly.',
+      },
+      {
+        title: 'Content governance',
+        description: 'We review new copy for ADA compliance, ISBA advertising rules, and structured data.',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80',
+      alt: 'Team evaluating maintenance checklist',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Your growth engine stays tuned
+      </h3>
+      <p>
+        Care plans include monthly reporting, CRO tests, and prioritized dev hours so new practice areas or campaigns can launch without waiting for another vendor.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 mt-6">
+        <div class="flex w-full sm:w-auto">
+          <Button href='/law-firm-seo' class="w-full sm:mb-0" variant="primary">
+            Pair with SEO system
+          </Button>
+        </div>
+      </div>
+    </Fragment>
+  </Content>
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Request a care proposal',
+        href: '/contact',
+      },
+    ]}
+    title="Lets keep your site sharp"
+    subtitle="Tell us your stack (WordPress, Webflow, headless) and well share coverage options."
+  />
+</Layout>

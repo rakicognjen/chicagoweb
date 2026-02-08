@@ -1,0 +1,66 @@
+---
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Content from '~/components/widgets/Content.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Search Visibility | Law Firm SEO Module',
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero
+    tagline="Module 02"
+    title="Search visibility: own organic + map pack"
+    subtitle="Topical maps, GBP ops, and content sprints that keep you in front of high-intent searches across Chicago and beyond."
+    actions={[{ variant: 'primary', text: 'Plan a sprint', href: '/contact' }]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1502791451862-7bd8c1df43a7?auto=format&fit=crop&w=1400&q=80',
+      alt: 'Team reviewing search results',
+    }}
+  />
+
+  <Content
+    isReversed
+    items={[
+      {
+        title: 'Editorial calendar',
+        description:
+          'Practice-area clusters, support content, and multimedia assets scheduled around SERP opportunities.',
+        icon: 'tabler:calendar',
+      },
+      {
+        title: 'GBP + local ops',
+        description:
+          'Post cadence, Q&A management, photo updates, and service area expansions tuned for neighborhoods.',
+        icon: 'tabler:map-pin',
+      },
+      {
+        title: 'Link & mention playbook',
+        description:
+          'Partnership content, local sponsorships, and digital PR that earns trust-building mentions.',
+        icon: 'tabler:relations',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=1200&q=80',
+      alt: 'Content strategist working with sticky notes',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Show up wherever your future clients search
+      </h3>
+      <p>
+        We blend long-form authority pieces with snackable local content, then reinforce it with GBP actions so you dominate both map pack and organic listings.
+      </p>
+    </Fragment>
+  </Content>
+
+  <CallToAction
+    actions={[{ variant: 'primary', text: 'Get a content roadmap', href: '/contact' }]}
+    title="Need consistent visibility?"
+    subtitle="Send us your current rankings or SERP screenshots. Well map the gaps."
+  />
+</Layout>

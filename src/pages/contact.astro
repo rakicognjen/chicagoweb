@@ -1,0 +1,87 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import ContactUs from '~/components/widgets/Contact.astro';
+import FeaturesClickable from '~/components/widgets/FeaturesClickable.astro';
+
+const metadata = {
+  title: 'Contact',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- HeroText Widget ******************* -->
+
+  <HeroText tagline="Contact" title="Let's Connect!" />
+
+
+
+<!-- Social Icons *********************** -->
+<div class="social-icons flex gap-4 justify-center">
+  <a href="https://wa.me/385923372473" target="_blank" rel="noopener noreferrer">
+    <img src="/whatsapp.png" alt="WhatsApp" class="w-12 h-12" />
+  </a>
+  <a href="weixin://dl/chat?wechatid_here" target="_blank" rel="noopener noreferrer">
+    <img src="/wechat.png" alt="WeChat" class="w-12 h-12" />
+  </a>
+  <a href="https://m.me/yourpage" target="_blank" rel="noopener noreferrer">
+    <img src="/messenger.png" alt="Messenger" class="w-12 h-12" />
+  </a>
+</div>
+
+  <!-- ContactUs Widget *************** -->
+  <ContactUs
+    id="form"
+    title="Drop us a message today!"
+    subtitle="Write to us or quicker answers, free quotes or wood sourcing advice. Our support team is delighted to help you."
+    inputs={[
+      {
+        type: 'text',
+        name: 'name',
+        label: 'Name',
+      },
+      {
+        type: 'email',
+        name: 'email',
+        label: 'Email',
+      },
+    ]}
+    textarea={{
+      label: 'Message',
+    }}
+    disclaimer={{
+      label:
+        'By submitting this contact form, you acknowledge and agree to the collection of your personal information.',
+    }}
+    description="Our support team typically responds within 24 business hours."
+  />
+
+  <!-- Features2 Widget ************** -->
+
+ 
+  <FeaturesClickable
+    title="We are here to help!"
+    items={[
+      {
+        title: 'Phone',
+        description: '+385 (92) 337 24 73',
+        icon: 'tabler:headset',
+        href: 'tel:+385923372473'
+      },
+      {
+        title: 'Email',
+        description: 'contact@support.com',
+        icon: 'tabler:mail',
+        href: 'mailto:alberto@support.com',
+      },
+      {
+        title: 'Location',
+        description: 'Petari 8, 1000, Zagreb, Croatia',
+        icon: 'tabler:map-pin',
+        href: 'https://maps.app.goo.gl/TaqTxw6m6aJ5RGQi8',  // your Google Maps URL here
+        target: '_blank',  // optional, to open in a new tab
+        rel: 'noopener noreferrer',
+      },
+    ]}
+  />
+</Layout>

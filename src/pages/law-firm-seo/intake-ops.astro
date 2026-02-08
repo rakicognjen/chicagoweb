@@ -1,0 +1,66 @@
+---
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Content from '~/components/widgets/Content.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Intake Ops | Law Firm SEO Module',
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero
+    tagline="Module 03"
+    title="Intake ops: convert clicks into consultations"
+    subtitle="Routing, tracking, and AI-assisted screening so your team spends time on qualified cases only."
+    actions={[{ variant: 'primary', text: 'Audit my intake', href: '/contact' }]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=1400&q=80',
+      alt: 'Intake specialist on the phone',
+    }}
+  />
+
+  <Content
+    isReversed
+    items={[
+      {
+        title: 'Attribution + tracking',
+        description:
+          'CallRail, form tracking, and CRM integrations so every lead is tied to the keyword or page that sourced it.',
+        icon: 'tabler:timeline',
+      },
+      {
+        title: 'AI & human intake scripts',
+        description:
+          'Pre-screening bots, dynamic forms, and call scripts that qualify quickly and keep staff consistent.',
+        icon: 'tabler:robot',
+      },
+      {
+        title: 'Feedback loop',
+        description:
+          'Monthly reviews of call recordings + signed-case ratios to adjust SEO targets based on real profitability.',
+        icon: 'tabler:repeat',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1485217988980-11786ced9454?auto=format&fit=crop&w=1200&q=80',
+      alt: 'Dashboard with intake analytics',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Marketing + intake finally work together
+      </h3>
+      <p>
+        We close the loop between SEO and what happens on the phone so optimizations prioritize the cases that close fastest.
+      </p>
+    </Fragment>
+  </Content>
+
+  <CallToAction
+    actions={[{ variant: 'primary', text: 'Improve intake today', href: '/contact' }]}
+    title="Dont waste another lead"
+    subtitle="Share your current tracking stack and intake recordings. Well give you an action plan."
+  />
+</Layout>

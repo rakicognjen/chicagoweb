@@ -1,0 +1,174 @@
+---
+import FeaturesClickable from '~/components/widgets/FeaturesClickable.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import Content from '~/components/widgets/Content.astro';
+import Button from '~/components/ui/Button.astro';
+
+const metadata = {
+  title: 'About us',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    tagline="About Us"
+    actions={[
+    {
+    variant: 'primary',
+    text: 'Bulk Order Now ',
+    href: '/#products',
+    target: '_blank',
+    },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1561435118-7a03b79d3ef0?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      alt: 'Stacks of high-quality Croatian timber sliced slabs ready for export',
+    }}
+  >
+    <Fragment slot="title">
+      Your Partner for <br />
+      <span class="text-accent dark:text-white">Croatian Wood Supply</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      With years of experience in sustainable forestry and international logistics, we connect global buyers with top-quality wood from Croatia. 
+    </Fragment>
+  </Hero>
+
+  <!-- Stats Widget ****************** -->
+
+  <Stats
+    stats={[
+      { title: 'Annual Export Volume', amount: '50K m³' },
+      { title: 'Countries Served', amount: '25+' },
+      { title: 'Timber Species', amount: '8' },
+      { title: 'Years of Experience', amount: '30' },
+    ]}
+  />
+
+  <!-- Features3 Widget ************** -->
+
+  <Features3
+    title="Wood Solutions Tailored to Your Industry"
+    subtitle="We supply premium Croatian wood in bulk to a variety of industries, offering reliable sourcing, expert guidance, and competitive logistics support to help you succeed—no matter your sector."
+    columns={3}
+    isAfterContent={true}
+    items={[
+      {
+        title: 'Furniture Production',
+        description:
+          'High-quality hardwoods ideal for manufacturing durable indoor and outdoor furniture. We ensure consistent supply for your production needs.',
+        icon: 'tabler:armchair',
+      },
+      {
+        title: 'Construction',
+        description:
+          'From beams to boards, our structural-grade wood supports residential and commercial building projects throughout Europe and beyond.',
+        icon: 'tabler:building-warehouse',
+      },
+      {
+        title: 'Packaging & Pallets',
+        description:
+          'We offer cost-effective, kiln-dried timber for pallet and packaging manufacturers requiring bulk orders with predictable quality.',
+        icon: 'tabler:box-seam',
+      },
+      {
+        title: 'Interior Design',
+        description:
+          'From flooring to wall panels, our oak and ash timber is favored by designers for its natural look, consistency, and elegance.',
+        icon: 'tabler:layout',
+      },
+      {
+        title: 'Energy & Biomass',
+        description:
+          'Reliable delivery of firewood, wood chips, and briquettes from Croatian forests, ready for biomass heating plants and distributors.',
+        icon: 'tabler:flame',
+      },
+      {
+        title: 'Wholesale & Trading',
+        description:
+          'Bulk quantities of sawn timber, logs, and specialty cuts for wholesalers and wood brokers seeking reliable European supply chains.',
+        icon: 'tabler:exchange',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1538332154724-522da11e310a?q=80&w=1472&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      alt: 'Wooden piles stacked',
+    }}
+  />
+
+  <!-- Why Choose Us Content Widget with CTA ****************** -->
+
+<Content
+  isReversed
+  tagline="Our Values"
+  title="We love wood!"
+  items={[
+    {
+      title: 'We care about quality',
+      description:
+        'Every piece of wood we send out reflects our pride in Croatian craftsmanship. We only work with high-grade timber that’s strong, reliable, and made to last.',
+    },
+    {
+      title: 'We make export easy',
+      description:
+        'Whether you’re nearby or on the other side of the world, we handle the paperwork, logistics, and shipping — so you get your wood on time, every time.',
+    },
+    {
+      title: 'We respect nature',
+      description:
+        'Our forests are part of who we are. That’s why we only work with trusted partners who follow sustainable forestry practices — keeping Croatia green for generations to come.',
+    }
+  ]}
+  image={{
+    src: '~/assets/images/we-love-wood.webp',
+    alt: 'A man hugging a tree',
+  }}
+>
+  <Fragment slot="content">
+    <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+      Crafting quality from the heart.
+    </h3>
+    From our forests in Croatia to your business.
+    <div class="flex flex-col sm:flex-row gap-4 mt-6">
+      <div class="flex w-full sm:w-auto">
+        <Button href="/#products" class="w-full sm:mb-0" variant="primary">
+          Bulk Buy Wood
+        </Button>
+      </div>
+    </div>
+  </Fragment>
+</Content>
+
+  <FeaturesClickable
+    title="We are here to help!"
+    items={[
+      {
+        title: 'Phone',
+        description: '+385 (92) 337 24 73',
+        icon: 'tabler:headset',
+        href: 'tel:+385923372473'
+      },
+      {
+        title: 'Email',
+        description: 'contact@support.com',
+        icon: 'tabler:mail',
+        href: 'mailto:alberto@support.com',
+      },
+      {
+        title: 'Location',
+        description: 'Petari 8, 1000, Zagreb, Croatia',
+        icon: 'tabler:map-pin',
+        href: 'https://maps.app.goo.gl/TaqTxw6m6aJ5RGQi8',  // your Google Maps URL here
+        target: '_blank',  // optional, to open in a new tab
+        rel: 'noopener noreferrer',
+      },
+    ]}
+  />
+
+</Layout>

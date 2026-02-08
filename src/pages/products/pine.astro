@@ -1,0 +1,231 @@
+---
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Content from '~/components/widgets/Content.astro';
+import Products from '~/components/widgets/Products.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+
+const metadata = {
+  title: 'Services',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    tagline="Reliable Export Solutions"
+    title="Simplifying Global Wood Trade"
+    subtitle="From logistics and compliance to quality assurance, get premium timber products worldwide — securely, efficiently, and on time."
+    actions={[{ variant: 'primary', target: '_blank', text: 'Start exploring', href: '/#products' }]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1561435354-298941a0d4a2?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      alt: 'AstroWind Hero Image',
+    }}
+  />
+
+<Products
+  id="products"
+  title="Pine Wood Products"
+  subtitle="Versatile and reliable European Pine"
+  tagline="Lightweight softwood for construction, furniture, and interiors"
+  columns={3}
+  items={[
+    {
+      title: "Sawn Timber",
+      description: "Standard pine timber used in construction, framing, and furniture production.",
+      href: "/products/pine/sawn-timber",
+      image: {
+        src: "~/assets/images/pine-sawn-timber.webp",
+        alt: "Pine sawn timber",
+      },
+    },
+    {
+      title: "Planed Boards",
+      description: "Smooth and uniform pine boards, ready for interiors and finishing work.",
+      href: "/products/pine/planed-boards",
+      image: {
+        src: "~/assets/images/pine-planed-boards.webp",
+        alt: "Pine planed boards",
+      },
+    },
+    {
+      title: "Finger-Jointed Panels",
+      description: "Stable panels made from finger-jointed pine pieces, ideal for furniture and joinery.",
+      href: "/products/pine/finger-jointed-panels",
+      image: {
+        src: "~/assets/images/pine-finger-jointed-panels.webp",
+        alt: "Pine finger-jointed panels",
+      },
+    },
+    {
+      title: "Laminated Beams",
+      description: "Engineered pine beams offering strength and versatility for structural applications.",
+      href: "/products/pine/laminated-beams",
+      image: {
+        src: "~/assets/images/pine-laminated-beams.webp",
+        alt: "Pine laminated beams",
+      },
+    },
+    {
+      title: "Wooden Battens",
+      description: "Cut-to-size pine battens for roofing, paneling, and flooring support.",
+      href: "/products/pine/wooden-battens",
+      image: {
+        src: "~/assets/images/pine-wooden-battens.webp",
+        alt: "Pine wooden battens",
+      },
+    },
+  ]}
+/>
+
+
+  <Content
+  isReversed
+  title="Croatian Lumber Export Services"
+  tagline="Efficient. Compliant. On Time."
+  items={[
+    {
+      title: 'Global Shipping Logistics',
+      description:
+        'We organize and oversee sea, road, and rail freight — ensuring your wood products are delivered securely and on schedule.',
+      icon: 'tabler:truck-delivery',
+    },
+    {
+      title: 'Customs & Documentation',
+      description:
+        'Full support for export paperwork, including customs clearance, certificates of origin, and phytosanitary reports.',
+      icon: 'tabler:file-text',
+    },
+    {
+      title: 'Moisture & Quality Control',
+      description:
+        'Every shipment is inspected for consistency, moisture content, and grading to meet strict export standards.',
+      icon: 'tabler:certificate',
+    },
+    {
+      title: 'End-to-End Coordination',
+      description:
+        'We provide responsive communication and logistics support throughout the export process, from warehouse to destination.',
+      icon: 'tabler:settings',
+    },
+  ]}
+  image={{
+    src: 'https://images.unsplash.com/photo-1700777685830-f501e67260e6?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    alt: 'Truck loaded with wooden beams ready for export',
+  }}
+>
+  <Fragment slot="content">
+    <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+      Full-Service Wood Export Support
+    </h3>
+  </Fragment>
+</Content>
+
+
+<Content
+  isAfterContent
+  items={[
+    {
+      title: 'Faster Delivery Times',
+      description:
+        'Our optimized logistics and partnerships with major carriers reduce delays and ensure your timber products arrive on schedule.',
+      icon: 'tabler:clock',
+    },
+    {
+      title: 'Credibility & Trust',
+      description:
+        'Working with verified exporters builds confidence with your buyers and guarantees documentation is handled professionally.',
+      icon: 'tabler:shield-check',
+    },
+    {
+      title: 'Cost Transparency',
+      description:
+        'Clear pricing and consolidated services eliminate unexpected charges and give you full control over your export expenses.',
+      icon: 'tabler:coin',
+    },
+    {
+      title: 'Easy Access to Markets',
+      description:
+        'With our export support, your timber products can enter new international markets faster — without getting slowed down by red tape.',
+      icon: 'tabler:globe',
+    },
+  ]}
+  image={{
+    src: 'https://images.unsplash.com/photo-1696845998751-1cfa9a102726?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    alt: 'Container yard with stacked timber ready for international shipping',
+  }}
+>
+  <Fragment slot="content">
+    <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Export Advantages</h3>
+  </Fragment>
+</Content>
+
+  <!-- Testimonials Widget *********** -->
+
+<Testimonials
+  title="What our partners say"
+  testimonials={[
+    {
+      testimonial: `We rely on their team for all our timber exports — from phytosanitary documentation to shipping logistics. The process is smooth, compliant, and consistently on time.`,
+      name: 'Emily Kennedy',
+      job: 'Export Coordinator',
+      image: {
+        src: 'https://images.unsplash.com/photo-1618835962148-cf177563c6c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=930&q=80',
+        alt: 'Emily Kennedy Image',
+      },
+    },
+    {
+      testimonial: `Our hardwood shipments always arrive exactly as promised — quality checked, moisture-controlled, and well-documented. A trusted partner in our supply chain.`,
+      name: 'Sarah Hansen',
+      job: 'Purchasing Manager',
+      image: {
+        src: 'https://images.unsplash.com/photo-1561406636-b80293969660?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+        alt: 'Sarah Hansen Image',
+      },
+    },
+    {
+      testimonial: `Thanks to their full-service export support, we’ve been able to expand into new markets without worrying about compliance or shipping delays.`,
+      name: 'Mark Wilkinson',
+      job: 'International Sales Director',
+      image: {
+        src: 'https://images.unsplash.com/photo-1545167622-3a6ac756afa4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=824&q=80',
+        alt: 'Mark Wilkinson Image',
+      },
+    },
+  ]}
+  callToAction={{
+    target: '_blank',
+    text: 'See Our Products',
+    href: '/#products',
+    icon: 'tabler:chevron-right',
+  }}
+/>
+
+
+  <!-- CallToAction Widget *********** -->
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Get free quote',
+        href: '/contact',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      Ready to Get <br class="block sm:hidden" />
+      Competitive Price?
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Meet your wood supplier now.
+    </Fragment>
+  </CallToAction>
+
+</Layout>

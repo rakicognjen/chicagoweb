@@ -1,0 +1,290 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Features from '~/components/widgets/Features.astro';
+import Products from '~/components/widgets/Products.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Content from '~/components/widgets/Content.astro';
+import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Button from '~/components/ui/Button.astro';
+
+const metadata = {
+  title: 'Chicago Legal Web Design & SEO | Predictable Client Acquisition',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    actions=[
+      {
+        variant: 'primary',
+        text: 'Book an intro call',
+        href: '/contact',
+        target: '_blank',
+      },
+      {
+        variant: 'ghost',
+        text: 'See the SEO system',
+        href: '/law-firm-seo',
+      },
+    ]
+    image={{ src: 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1600&q=80', alt: 'Chicago skyline at dusk' }}
+  >
+    <Fragment slot="title">
+      Predictable clients for <span class="xl:inline">Chicago law firms</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      We design authority websites and run an SEO + intake system that turns Google searches into qualified consultations1without chasing referrals or burning cash on ads.
+    </Fragment>
+  </Hero>
+
+  <Products
+    id="products"
+    title="Our Growth Modules"
+    subtitle="Every engagement pulls from these building blocks"
+    tagline="Strategy first, execution second"
+    columns={3}
+    items=[
+      {
+        title: 'Authority Site Build',
+        description: 'Conversion-first websites mapped to each Chicago practice area and compliant with bar rules.',
+        href: '/law-firm-websites',
+        image: {
+          src: 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=600&q=80',
+          alt: 'Design team planning a website',
+        },
+      },
+      {
+        title: 'Practice Area Playbooks',
+        description: 'Research-backed layouts for PI, criminal, immigration, and family law built for search intent.',
+        href: '/law-firm-websites/brand-foundations',
+        image: {
+          src: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=600&q=80',
+          alt: 'Wireframes and notes on a desk',
+        },
+      },
+      {
+        title: 'Google Authority Engine',
+        description: 'On-page, entity, and GBP optimizations to win the Chicago map pack and organic listings.',
+        href: '/law-firm-seo/authority-build',
+        image: {
+          src: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=600&q=80',
+          alt: 'Analytics dashboard on laptop',
+        },
+      },
+      {
+        title: 'Search Visibility Sprints',
+        description: 'Editorial calendar + topical coverage so every question a prospect asks leads back to you.',
+        href: '/law-firm-seo/search-visibility',
+        image: {
+          src: 'https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=600&q=80',
+          alt: 'Content strategy meeting',
+        },
+      },
+      {
+        title: 'Intake Ops Dashboard',
+        description: 'Call tracking, form routing, and AI-assisted screening so your team talks to better leads faster.',
+        href: '/law-firm-seo/intake-ops',
+        image: {
+          src: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=600&q=80',
+          alt: 'Team reviewing dashboards',
+        },
+      },
+      {
+        title: 'Care & Compliance',
+        description: 'Technical upkeep, Core Web Vitals, and content governance to keep rankings and regulators happy.',
+        href: '/law-firm-websites/care-plans',
+        image: {
+          src: 'https://images.unsplash.com/photo-1474631245212-32dc3c8310c6?auto=format&fit=crop&w=600&q=80',
+          alt: 'Developer monitoring uptime',
+        },
+      },
+    ]
+  />
+
+  <Features
+    id="features"
+    tagline="Why Chicago firms hire us"
+    title="A system built for predictable legal intake"
+    subtitle="We sell outcomes, not buzzwords or unfinished roadmaps."
+    items=[
+      {
+        title: 'Strategy before pixels',
+        description: 'We map search intent, case value, and competition before a single page is designed.',
+        icon: 'tabler:compass',
+      },
+      {
+        title: 'Local-first SEO',
+        description: 'Neighborhood, courthouse, and language nuances baked into every schema, FAQ, and GBP post.',
+        icon: 'tabler:map-pin',
+      },
+      {
+        title: 'Conversion obsessed',
+        description: 'Heatmaps, intake scripts, and proof blocks tuned to cut bad leads and attract better cases.',
+        icon: 'tabler:activity-heartbeat',
+      },
+      {
+        title: 'Transparent reporting',
+        description: 'Scorecards that tie calls, forms, and signed retainers back to the exact query or page.',
+        icon: 'tabler:report-analytics',
+      },
+    ]
+  />
+
+  <Content
+    isReversed
+    tagline="Built in Chicago"
+    title="Your unfair advantage in a crowded legal market"
+    items=[
+      {
+        title: 'Practice-specific frameworks',
+        description: 'Each template is tuned for the way PI, criminal defense, and business law prospects evaluate counsel.',
+      },
+      {
+        title: 'Intake + tech alignment',
+        description: 'We connect chat, phone, and CRM flows so nothing slips between marketing and your staff.',
+      },
+      {
+        title: 'Compliance ready',
+        description: 'Content is reviewed for ISBA advertising rules, ADA accessibility, and privacy policies.',
+      },
+    ]
+    image={{
+      src: 'https://images.unsplash.com/photo-1478479474071-8a3014d422c8?auto=format&fit=crop&w=900&q=80',
+      alt: 'Law firm conference room',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Chicago expertise + repeatable execution
+      </h3>
+      <p>
+        We study your top SERP competitors, reverse engineer what Google rewards, then rebuild your presence so it outranks theirs and converts better. The output is a calm intake calendar and fewer tire-kickers.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 mt-6">
+        <div class="flex w-full sm:w-auto">
+          <Button href='/law-firm-websites' class="w-full sm:mb-0" variant="primary">
+            See the website blueprint
+          </Button>
+        </div>
+      </div>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-slate-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <Steps
+    title="How engagements work"
+    items=[
+      {
+        title: 'Step 1: <span class="font-medium">Diagnostics</span>',
+        description:
+          '60-minute deep dive + audit of analytics, GBP, SERPs, and intake scripts. We identify the biggest leaks.',
+        icon: 'tabler:stethoscope',
+      },
+      {
+        title: 'Step 2: <span class="font-medium">Offer Roadmap</span>',
+        description:
+          'We translate findings into a 90-day roadmap covering site rebuild needs, content gaps, and link targets.',
+        icon: 'tabler:clipboard-text',
+      },
+      {
+        title: 'Step 3: <span class="font-medium">Execution Pods</span>',
+        description:
+          'Designers, writers, and SEO strategists ship in sprints with weekly Loom updates and shared dashboards.',
+        icon: 'tabler:rocket',
+      },
+      {
+        title: 'Step 4: <span class="font-medium">Optimize & Scale</span>',
+        description: 'Monthly CRO, intake quality reviews, and new practice area launches keep the pipeline full.',
+        icon: 'tabler:refresh-alert',
+      },
+    ]
+    image={{
+      src: 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=900&q=80',
+      alt: 'Whiteboard process workshop',
+    }}
+  />
+
+  <BlogLatestPosts
+    title="Latest legal marketing intel"
+    information={`AI intake workflows, Google Business Profile updates, and Chicago SERP breakdownseverything we learn while running campaigns for local firms gets documented here.`}
+  />
+
+  <FAQs
+    title="Frequently asked"
+    subtitle="Straight answers before we ever hop on a call."
+    tagline="FAQs"
+    classes={{ container: 'max-w-6xl' }}
+    items=[
+      {
+        title: 'Do you only work with Chicago firms?',
+        description:
+          'Chicago is home base and our sweet spot, but we also partner with firms across Illinois that want a Chicago-style presence.',
+      },
+      {
+        title: 'What makes this different from generic SEO packages?',
+        description:
+          'We sell a repeatable acquisition system: positioning, conversion copy, search authority, and intake automationnot blog quotas or backlink promises.',
+      },
+      {
+        title: 'How fast will we see results?',
+        description:
+          'Expect quick wins within 45 days (map pack visibility, higher contact rates) and compounding organic gains around the 90-day mark.',
+      },
+      {
+        title: 'Can you work with our existing marketing team?',
+        description:
+          'Yes. We often plug into in-house teams as the technical SEO + conversion partner and share playbooks so everyone stays aligned.',
+      },
+      {
+        title: 'Are you compliant with ISBA advertising rules?',
+        description:
+          'Every deliverable is reviewed for required disclaimers, testimonials, and accessibility. We document approvals for your records.',
+      },
+      {
+        title: 'What do engagements cost?',
+        description:
+          'Website rebuilds start at $12k and monthly SEO/intake management starts at $4.5k. Everything is scoped transparently after the diagnostic.',
+      },
+    ]
+  />
+
+  <Stats
+    stats=[
+      { title: 'Avg. increase in qualified inquiries', amount: '+63%' },
+      { title: 'Map pack wins in 90 days', amount: '42' },
+      { title: 'Practice areas templated', amount: '18' },
+      { title: 'Projects delivered', amount: '120+' },
+    ]
+  />
+
+  <CallToAction
+    actions=[
+      {
+        variant: 'primary',
+        text: 'Book the diagnostic',
+        href: '/contact',
+      },
+    ]
+  >
+    <Fragment slot="title">
+      Ready to own Chicago search results?
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Share your goals, current metrics, and deadlines. Well reply within one business day with next steps.
+    </Fragment>
+  </CallToAction>
+
+</Layout>

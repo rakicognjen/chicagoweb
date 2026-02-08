@@ -1,0 +1,77 @@
+---
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Content from '~/components/widgets/Content.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Button from '~/components/ui/Button.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Conversion Assets for Law Firm Websites',
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero
+    tagline="Conversion Assets"
+    title="Content blocks that move visitors from curious to retained"
+    subtitle="We craft practice pages, FAQ stacks, proof modules, and CTAs that speak your clients’ language and filter out low-value inquiries."
+    actions={[{ variant: 'primary', target: '_blank', text: 'See examples', href: '/contact' }]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1600&q=80',
+      alt: 'Laptop displaying analytics and content drafts',
+    }}
+  />
+
+  <Content
+    isReversed
+    tagline="Whats included"
+    title="Every asset is tied to search intent and intake data"
+    items={[
+      {
+        title: 'Practice area canvases',
+        description:
+          'Structured outlines covering issue, approach, process, social proof, FAQs, and CTA mapping for each service.',
+      },
+      {
+        title: 'Proof systems',
+        description:
+          'Verdict sliders, testimonial grids, media logos, and authority bios slotted where prospects need reassurance.',
+      },
+      {
+        title: 'CTA + intake variations',
+        description:
+          'Phone, form, chat, and scheduler CTAs tailored to device type and urgency with tracking baked in.',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1523475472560-d2df97ec485c?auto=format&fit=crop&w=1200&q=80',
+      alt: 'Attorney pointing at conversion data',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl" >Make prospects feel understood in under 15 seconds</h3>
+      <p>
+        Your buyers skim. We give them snackable proof, localized FAQs, and clear next steps so they stop shopping around and contact you first.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 mt-6">
+        <div class="flex w-full sm:w-auto">
+          <Button href='/law-firm-websites/care-plans' class="w-full sm:mb-0" variant="primary">
+            See how we maintain it
+          </Button>
+        </div>
+      </div>
+    </Fragment>
+  </Content>
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Brief us',
+        href: '/contact',
+      },
+    ]}
+    title="Need conversion-ready content?"
+    subtitle="Share your current site and target cases. Well outline a content plan within 48 hours."
+  />
+</Layout>
