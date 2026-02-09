@@ -13,162 +13,151 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero Widget ******************* -->
-
   <Hero
-    tagline="About Us"
+    tagline="About"
     actions={[
-    {
-    variant: 'primary',
-    text: 'Bulk Order Now ',
-    href: '/#products',
-    target: '_blank',
-    },
+      {
+        variant: 'primary',
+        text: 'Book an intro call',
+        href: '/contact',
+      },
+      {
+        variant: 'ghost',
+        text: 'See our work',
+        href: '/law-firm-websites',
+      },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1561435118-7a03b79d3ef0?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-      alt: 'Stacks of high-quality Croatian timber sliced slabs ready for export',
+      src: 'https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1600&q=80',
+      alt: 'Chicago skyline from the river',
     }}
   >
     <Fragment slot="title">
-      Your Partner for <br />
-      <span class="text-accent dark:text-white">Croatian Wood Supply</span>
+      Chicago Legal <span class="text-accent dark:text-white">Systems Team</span>
     </Fragment>
 
     <Fragment slot="subtitle">
-      With years of experience in sustainable forestry and international logistics, we connect global buyers with top-quality wood from Croatia. 
+      We are the studio behind Chicago’s sharpest law firm websites and search campaigns. Designers, SEOs, and intake strategists working in lockstep so your firm looks, ranks, and converts like the market leader.
     </Fragment>
   </Hero>
 
-  <!-- Stats Widget ****************** -->
-
   <Stats
     stats={[
-      { title: 'Annual Export Volume', amount: '50K m³' },
-      { title: 'Countries Served', amount: '25+' },
-      { title: 'Timber Species', amount: '8' },
-      { title: 'Years of Experience', amount: '30' },
+      { title: 'Sites relaunched', amount: '120+' },
+      { title: 'Practice areas templated', amount: '18' },
+      { title: 'Avg. lift in qualified intake', amount: '+63%' },
+      { title: 'Combined years in legal marketing', amount: '25' },
     ]}
   />
 
-  <!-- Features3 Widget ************** -->
-
   <Features3
-    title="Wood Solutions Tailored to Your Industry"
-    subtitle="We supply premium Croatian wood in bulk to a variety of industries, offering reliable sourcing, expert guidance, and competitive logistics support to help you succeed—no matter your sector."
+    title="How we partner with firms"
+    subtitle="Every engagement is led by a strategist and backed by a multidisciplinary pod."
     columns={3}
     isAfterContent={true}
     items={[
       {
-        title: 'Furniture Production',
-        description:
-          'High-quality hardwoods ideal for manufacturing durable indoor and outdoor furniture. We ensure consistent supply for your production needs.',
-        icon: 'tabler:armchair',
+        title: 'Strategy-intensive onboarding',
+        description: 'We audit intake, Google Business Profile data, and local SERPs before touching a pixel so positioning and messaging hit immediately.',
+        icon: 'tabler:compass',
       },
       {
-        title: 'Construction',
-        description:
-          'From beams to boards, our structural-grade wood supports residential and commercial building projects throughout Europe and beyond.',
-        icon: 'tabler:building-warehouse',
+        title: 'Design + engineering pods',
+        description: 'Designers, copywriters, and developers sprint together—no handoffs that dilute the story. Each layout is mapped to search intent and conversion points.',
+        icon: 'tabler:pencil',
       },
       {
-        title: 'Packaging & Pallets',
-        description:
-          'We offer cost-effective, kiln-dried timber for pallet and packaging manufacturers requiring bulk orders with predictable quality.',
-        icon: 'tabler:box-seam',
+        title: 'SEO & authority engine',
+        description: 'Entity builds, review ops, topical maps, and link plays tuned specifically for Chicago neighborhoods and multilingual audiences.',
+        icon: 'tabler:seo',
       },
       {
-        title: 'Interior Design',
-        description:
-          'From flooring to wall panels, our oak and ash timber is favored by designers for its natural look, consistency, and elegance.',
-        icon: 'tabler:layout',
+        title: 'Intake optimization',
+        description: 'Call tracking, AI triage, and CRM automations ensure the leads we drive are routed fast and logged with context.',
+        icon: 'tabler:phone-check',
       },
       {
-        title: 'Energy & Biomass',
-        description:
-          'Reliable delivery of firewood, wood chips, and briquettes from Croatian forests, ready for biomass heating plants and distributors.',
-        icon: 'tabler:flame',
+        title: 'Compliance-first mindset',
+        description: 'ISBA advertising rules and ADA accessibility checks are baked into every deliverable—no costly rewrites after launch.',
+        icon: 'tabler:shield-check',
       },
       {
-        title: 'Wholesale & Trading',
-        description:
-          'Bulk quantities of sawn timber, logs, and specialty cuts for wholesalers and wood brokers seeking reliable European supply chains.',
-        icon: 'tabler:exchange',
+        title: 'Transparent reporting',
+        description: 'Weekly Loom updates, shared dashboards, and quarterly roadmaps tie every sprint to intake metrics the partners care about.',
+        icon: 'tabler:report-analytics',
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1538332154724-522da11e310a?q=80&w=1472&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-      alt: 'Wooden piles stacked',
+      src: 'https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=1400&q=80',
+      alt: 'Creative workshop with sticky notes',
     }}
   />
 
-  <!-- Why Choose Us Content Widget with CTA ****************** -->
-
-<Content
-  isReversed
-  tagline="Our Values"
-  title="We love wood!"
-  items={[
-    {
-      title: 'We care about quality',
-      description:
-        'Every piece of wood we send out reflects our pride in Croatian craftsmanship. We only work with high-grade timber that’s strong, reliable, and made to last.',
-    },
-    {
-      title: 'We make export easy',
-      description:
-        'Whether you’re nearby or on the other side of the world, we handle the paperwork, logistics, and shipping — so you get your wood on time, every time.',
-    },
-    {
-      title: 'We respect nature',
-      description:
-        'Our forests are part of who we are. That’s why we only work with trusted partners who follow sustainable forestry practices — keeping Croatia green for generations to come.',
-    }
-  ]}
-  image={{
-    src: '~/assets/images/we-love-wood.webp',
-    alt: 'A man hugging a tree',
-  }}
->
-  <Fragment slot="content">
-    <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
-      Crafting quality from the heart.
-    </h3>
-    From our forests in Croatia to your business.
-    <div class="flex flex-col sm:flex-row gap-4 mt-6">
-      <div class="flex w-full sm:w-auto">
-        <Button href="/#products" class="w-full sm:mb-0" variant="primary">
-          Bulk Buy Wood
-        </Button>
+  <Content
+    isReversed
+    tagline="Our story"
+    title="Born inside Chicago firms"
+    items={[
+      {
+        title: 'From firm insiders to studio founders',
+        description:
+          'We started as in-house marketers for boutique injury and defense firms. After rebuilding intake systems and websites multiple times, we spun out to serve more practices across the city.',
+      },
+      {
+        title: 'Systems, not one-off deliverables',
+        description:
+          'Every package is a codified playbook: messaging frameworks, design libraries, SEO roadmaps, and intake SOPs that compound long after launch.',
+      },
+      {
+        title: 'Obsessed with measurable intake',
+        description:
+          'We only celebrate when signed cases go up. That’s why every project includes attribution, call monitoring, and iterative CRO testing.',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=900&q=80',
+      alt: 'Team collaborating over analytics dashboards',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Built for ambitious Chicago firms
+      </h3>
+      We partner with plaintiffs, defense, and corporate boutiques that want to look and perform like category leaders—without building an internal marketing department from scratch.
+      <div class="flex flex-col sm:flex-row gap-4 mt-6">
+        <div class="flex w-full sm:w-auto">
+          <Button href="/contact" class="w-full sm:mb-0" variant="primary">
+            Schedule a diagnostic
+          </Button>
+        </div>
       </div>
-    </div>
-  </Fragment>
-</Content>
+    </Fragment>
+  </Content>
 
   <FeaturesClickable
-    title="We are here to help!"
+    title="Let’s work together"
+    subtitle="Reach out however it’s easiest—our team replies within one business day."
     items={[
       {
         title: 'Phone',
-        description: '+385 (92) 337 24 73',
-        icon: 'tabler:headset',
-        href: 'tel:+385923372473'
+        description: '+1 (312) 777-0147',
+        icon: 'tabler:phone',
+        href: 'tel:+13127770147',
       },
       {
         title: 'Email',
-        description: 'contact@support.com',
+        description: 'hello@chicagolegalsystems.com',
         icon: 'tabler:mail',
-        href: 'mailto:alberto@support.com',
+        href: 'mailto:hello@chicagolegalsystems.com',
       },
       {
-        title: 'Location',
-        description: 'Petari 8, 1000, Zagreb, Croatia',
+        title: 'Studio',
+        description: '433 W Van Buren St, Suite 1100S, Chicago, IL 60607',
         icon: 'tabler:map-pin',
-        href: 'https://maps.app.goo.gl/TaqTxw6m6aJ5RGQi8',  // your Google Maps URL here
-        target: '_blank',  // optional, to open in a new tab
+        href: 'https://maps.google.com/?q=433+W+Van+Buren+St,+Chicago,+IL+60607',
+        target: '_blank',
         rel: 'noopener noreferrer',
       },
     ]}
   />
-
 </Layout>
