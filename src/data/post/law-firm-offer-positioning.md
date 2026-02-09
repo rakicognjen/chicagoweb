@@ -1,10 +1,10 @@
 ---
 publishDate: 2026-01-15T00:00:00Z
-author: Alberto Selandari
-title: Law Firm Offer Positioning: Sell Outcomes, Not Services
-excerpt: Stop marketing "SEO and websites." Learn how to frame your offer as predictable client acquisition that partners actually buy.
+author: "Alberto Selandari"
+title: "Law Firm Offer Positioning: Sell Outcomes, Not Services"
+excerpt: "Stop marketing 'SEO and websites.' Learn how to frame your offer as predictable client acquisition that partners actually buy."
 image: https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1600&q=80
-category: Positioning
+category: "Positioning"
 tags:
   - law firm marketing
   - positioning

@@ -22,7 +22,7 @@ const metadata = {
   <!-- Hero Widget ******************* -->
 
   <Hero
-    actions=[
+    actions={[
       {
         variant: 'primary',
         text: 'Book an intro call',
@@ -34,7 +34,7 @@ const metadata = {
         text: 'See the SEO system',
         href: '/law-firm-seo',
       },
-    ]
+    ]}
     image={{ src: 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1600&q=80', alt: 'Chicago skyline at dusk' }}
   >
     <Fragment slot="title">
@@ -42,7 +42,7 @@ const metadata = {
     </Fragment>
 
     <Fragment slot="subtitle">
-      We design authority websites and run an SEO + intake system that turns Google searches into qualified consultations1without chasing referrals or burning cash on ads.
+      We design authority websites and run an SEO + intake system that turns Google searches into qualified consultations without chasing referrals or burning cash on ads.
     </Fragment>
   </Hero>
 
@@ -52,7 +52,7 @@ const metadata = {
     subtitle="Every engagement pulls from these building blocks"
     tagline="Strategy first, execution second"
     columns={3}
-    items=[
+    items={[
       {
         title: 'Authority Site Build',
         description: 'Conversion-first websites mapped to each Chicago practice area and compliant with bar rules.',
@@ -107,7 +107,7 @@ const metadata = {
           alt: 'Developer monitoring uptime',
         },
       },
-    ]
+    ]}
   />
 
   <Features
@@ -115,7 +115,7 @@ const metadata = {
     tagline="Why Chicago firms hire us"
     title="A system built for predictable legal intake"
     subtitle="We sell outcomes, not buzzwords or unfinished roadmaps."
-    items=[
+    items={[
       {
         title: 'Strategy before pixels',
         description: 'We map search intent, case value, and competition before a single page is designed.',
@@ -136,14 +136,14 @@ const metadata = {
         description: 'Scorecards that tie calls, forms, and signed retainers back to the exact query or page.',
         icon: 'tabler:report-analytics',
       },
-    ]
+    ]}
   />
 
   <Content
     isReversed
     tagline="Built in Chicago"
     title="Your unfair advantage in a crowded legal market"
-    items=[
+    items={[
       {
         title: 'Practice-specific frameworks',
         description: 'Each template is tuned for the way PI, criminal defense, and business law prospects evaluate counsel.',
@@ -156,7 +156,7 @@ const metadata = {
         title: 'Compliance ready',
         description: 'Content is reviewed for ISBA advertising rules, ADA accessibility, and privacy policies.',
       },
-    ]
+    ]}
     image={{
       src: 'https://images.unsplash.com/photo-1478479474071-8a3014d422c8?auto=format&fit=crop&w=900&q=80',
       alt: 'Law firm conference room',
@@ -185,7 +185,7 @@ const metadata = {
 
   <Steps
     title="How engagements work"
-    items=[
+    items={[
       {
         title: 'Step 1: <span class="font-medium">Diagnostics</span>',
         description:
@@ -209,7 +209,7 @@ const metadata = {
         description: 'Monthly CRO, intake quality reviews, and new practice area launches keep the pipeline full.',
         icon: 'tabler:refresh-alert',
       },
-    ]
+    ]}
     image={{
       src: 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=900&q=80',
       alt: 'Whiteboard process workshop',
@@ -218,7 +218,7 @@ const metadata = {
 
   <BlogLatestPosts
     title="Latest legal marketing intel"
-    information={`AI intake workflows, Google Business Profile updates, and Chicago SERP breakdownseverything we learn while running campaigns for local firms gets documented here.`}
+    information={`AI intake workflows, Google Business Profile updates, and Chicago SERP breakdowns—everything we learn while running campaigns for local firms gets documented here.`}
   />
 
   <FAQs
@@ -226,7 +226,7 @@ const metadata = {
     subtitle="Straight answers before we ever hop on a call."
     tagline="FAQs"
     classes={{ container: 'max-w-6xl' }}
-    items=[
+    items={[
       {
         title: 'Do you only work with Chicago firms?',
         description:
@@ -235,7 +235,7 @@ const metadata = {
       {
         title: 'What makes this different from generic SEO packages?',
         description:
-          'We sell a repeatable acquisition system: positioning, conversion copy, search authority, and intake automationnot blog quotas or backlink promises.',
+          'We sell a repeatable acquisition system: positioning, conversion copy, search authority, and intake automation—not blog quotas or backlink promises.',
       },
       {
         title: 'How fast will we see results?',
@@ -257,26 +257,26 @@ const metadata = {
         description:
           'Website rebuilds start at $12k and monthly SEO/intake management starts at $4.5k. Everything is scoped transparently after the diagnostic.',
       },
-    ]
+    ]}
   />
 
   <Stats
-    stats=[
+    stats={[
       { title: 'Avg. increase in qualified inquiries', amount: '+63%' },
       { title: 'Map pack wins in 90 days', amount: '42' },
       { title: 'Practice areas templated', amount: '18' },
       { title: 'Projects delivered', amount: '120+' },
-    ]
+    ]}
   />
 
   <CallToAction
-    actions=[
+    actions={[
       {
         variant: 'primary',
         text: 'Book the diagnostic',
         href: '/contact',
       },
-    ]
+    ]}
   >
     <Fragment slot="title">
       Ready to own Chicago search results?
@@ -288,3 +288,7 @@ const metadata = {
   </CallToAction>
 
 </Layout>
+
+
+
+
