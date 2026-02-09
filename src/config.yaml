@@ -1,6 +1,6 @@
 site:
   name: Chicago Legal Web Studio
-  site: 'https://wood-wine-phi.vercel.app'
+  site: 'https://chicagoweb.vercel.app/'
   base: '/'
   trailingSlash: false
 
